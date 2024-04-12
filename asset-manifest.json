@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.6c085377.css",
-    "main.js": "./static/js/main.e6a63292.js",
+    "main.js": "./static/js/main.0ee41b83.js",
     "static/media/Oracle Cloud Infrastructure 2023 eCertificate.pdf": "./static/media/Oracle Cloud Infrastructure 2023 eCertificate.7e62e3f5412c9ca5d1c5.pdf",
     "static/media/Collaborators Award_E-Certificate - VIKASH CHAUDHARY.pdf": "./static/media/Collaborators Award_E-Certificate - VIKASH CHAUDHARY.fa6535bbfc09f4410527.pdf",
     "static/media/Certificate_Vikash Chaudhary.pdf": "./static/media/Certificate_Vikash Chaudhary.d10cf09b0c8ab052ccdc.pdf",
@@ -17,10 +17,10 @@
     "static/media/slick.woff": "./static/media/slick.295183786cd8a1389865.woff",
     "index.html": "./index.html",
     "main.6c085377.css.map": "./static/css/main.6c085377.css.map",
-    "main.e6a63292.js.map": "./static/js/main.e6a63292.js.map"
+    "main.0ee41b83.js.map": "./static/js/main.0ee41b83.js.map"
   },
   "entrypoints": [
     "static/css/main.6c085377.css",
-    "static/js/main.e6a63292.js"
+    "static/js/main.0ee41b83.js"
   ]
 }
