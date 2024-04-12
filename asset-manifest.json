@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "./static/css/main.6c085377.css",
+    "main.js": "./static/js/main.e6a63292.js",
+    "static/media/Oracle Cloud Infrastructure 2023 eCertificate.pdf": "./static/media/Oracle Cloud Infrastructure 2023 eCertificate.7e62e3f5412c9ca5d1c5.pdf",
+    "static/media/Collaborators Award_E-Certificate - VIKASH CHAUDHARY.pdf": "./static/media/Collaborators Award_E-Certificate - VIKASH CHAUDHARY.fa6535bbfc09f4410527.pdf",
+    "static/media/Certificate_Vikash Chaudhary.pdf": "./static/media/Certificate_Vikash Chaudhary.d10cf09b0c8ab052ccdc.pdf",
+    "static/media/VIKASH CHAUDHARY - Congatulations.pdf": "./static/media/VIKASH CHAUDHARY - Congatulations.dde9ab491175b04109e3.pdf",
+    "static/media/Q1 Champs FY23 E-Certificate - VIKASH CHAUDHARY.pdf": "./static/media/Q1 Champs FY23 E-Certificate - VIKASH CHAUDHARY.9aeabb2993b02ebe018f.pdf",
+    "static/media/Me.PNG": "./static/media/Me.f17a4a52be9fef01439a.PNG",
+    "static/media/Vikash Chaudhary - Congatulations.pdf": "./static/media/Vikash Chaudhary - Congatulations.7efc7914bb0b188de9ba.pdf",
+    "static/media/service-8.jpg": "./static/media/service-8.afb0a1974077169965f6.jpg",
+    "static/media/Award.jpg": "./static/media/Award.20b7e97806b07009dd72.jpg",
+    "static/media/slick.svg": "./static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "./static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "./static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "./static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "./index.html",
+    "main.6c085377.css.map": "./static/css/main.6c085377.css.map",
+    "main.e6a63292.js.map": "./static/js/main.e6a63292.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6c085377.css",
+    "static/js/main.e6a63292.js"
+  ]
+}
