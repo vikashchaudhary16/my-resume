@@ -36,7 +36,7 @@ export const myData = {
   lastWorkingDay: new Date("2022-04-30"),
   website: {
     name: "github.com/vikashchaudhary16/my-resume",
-    link: "https://github.com/vikashchaudhary16/my-resume",
+    link: "https://vikashchaudhary16.github.io/my-resume/#/resume",
   },
   social: [
     {
