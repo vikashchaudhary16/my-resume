@@ -36,7 +36,7 @@ const Education = ({ desc }) => {
             image={desc["img"]}
             alt="green iguana"
           />
-          <CardContent>
+          <CardContent sx={{minHeight:'200px'}}>
             <Typography variant="h6" component="div" sx={{fontSize:17}}>
               {desc["degree"]}
             </Typography>

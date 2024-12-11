@@ -11,7 +11,7 @@ education: [
       startDate: new Date("2012-06-01"),
       endDate: new Date("2015-07-12"),
       description:
-        "MCA (first class with distinction) from Acharya Institute of Technology, Bengaluru, Karnataka. Batch of (2012)",
+        "MCA (70%) from Acharya Institute of Technology, Bengaluru, Karnataka. Batch of (2012)",
       //logo: silicon,
     },
     {

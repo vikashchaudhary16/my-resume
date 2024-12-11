@@ -52,8 +52,7 @@ export const myData = {
   ],
   languages: [
     { name: "English", profeciency: "Fluent", rate: 4.5 },
-    { name: "Hindi", profeciency: "Fluent", rate: 4 },
-    // { name: "Odia", profeciency: "Native", rate: 4.5 },
+    { name: "Hindi", profeciency: "Fluent", rate: 5 }    
   ],
   intrests: ["Cricket", "Watching TV"],
   bio: `My name is Vikash Chaudhary, and I work as an Senior Software Developer in DXC Technology Bangalore office. In April 2019, I began working at DXC Technology as a Senior Software Developer. I also have a Master degree in Master of Computer Application (MCA) from Bangalore Acharya Institute of Technology.

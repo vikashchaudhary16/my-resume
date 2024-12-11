@@ -31,9 +31,9 @@ const MyProjects = ({ projects, printTech }) => {
                   </span>
                 </Typography>
               </Box>
-              <Box className="col-lg-3">
+              {/* <Box className="col-lg-3">
                 <img width={"100"} src={pro.img} />
-              </Box>
+              </Box> */}
             </Box>
             <Typography className="time-line-item-content">
               {pro.description}
