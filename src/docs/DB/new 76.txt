@@ -1,0 +1,164 @@
+c# program:-
+https://www.c-sharpcorner.com/UploadFile/9582c9/basic-C-Sharp-programming-problem-and-solutions-part1/
+==========================================================================================================
+1. Cost Center && Account Cost center (Activate Tab and Deactive Tab)
+2. Microfoucs Account List (Activate Tab and Deactive Tab)
+==========================================================================================================
+cross join vs full outer join
+nested joins in sql
+What is a Merge Join in SQL Server?
+what is the difference between merge and union all transformation in sql?
+cursor in sql
+merge vs union in sql
+merge vs full outer join
+===========================================================================================================
+child_process
+spawn vs exec nodejs
+spawn vs fork nodejs
+spawn node js
+asynchronous vs synchronous javascript
+libuv in node js
+blocking and non blocking in node js
+fork vs multithreading | Child vs Thread
+==============================================================================================================
+.net framework 4.7 vs .net 6
+=============================================================================================================
+How to find nth highest salary in sql
+	db.products.find().sort({price:-1}).skip(n-1).limit(n-1)
+	
+	with Emp as
+	(
+	select *,DENSE_RANK() over (order by salary desc) as RankID from Employee 
+	) 
+	select top 1 * from Emp where RankID=N
+
+How to find 1th highest salary in sql
+	db.products.find().sort({price:-1}).limit(1)
+	
+	select max(Salary) from Employee
+How to find 2th highest salary in sql
+	db.products.find().sort({price:-1}).skip(1).limit(1)
+How to find 15th highest salary in sql
+	db.products.find().sort({price:-1}).skip(15-1).limit(15-1)
+	*********************************************************
+SQL query to get organization hierarchy
+	with Emp as
+	(
+		select EmployeeID,Name,Salary,ManagerID from Employee where EmployeeID=1
+		union all
+		select Employee.EmployeeID,	Employee.Name,Employee.Salary,Employee.ManagerID from Employee join Emp on Employee.EmployeeID=Emp.ManagerID
+	)
+	select EmployeeID,Name,Salary,ManagerID from Emp
+	*****************************************************************
+Delete duplicate rows in sql
+	 WITH EmployeesCTE AS
+	(
+	   SELECT *, ROW_NUMBER()OVER(PARTITION BY Name ORDER BY EmployeeID) AS RowNumber
+	   FROM Employee
+	)
+	Delete from EmployeesCTE where RowNumber>1
+	***************************************************************** 
+SQL query to find employees hired in last n months
+	select *,DATEDIFF(MONTH,HireDate,GETDATE()) as datediffnum from Employee
+	where DATEDIFF(MONTH,HireDate,GETDATE()) between 1 and 12
+	
+	*****************************************************************
+Transform rows into columns in sql server
+	select country , city1,city2,city3 from 
+	(
+		select *,'City'+ cast(ROW_NUMBER() over(partition by Country order by City) as nvarchar(10)) as CityID from Countries 
+	) tmp
+	pivot
+	(
+		MAX(City) for CityID in(city1,city2,city3)
+	) as pivottable
+	
+	*****************************************************************
+SQL query to find rows that contain only numerical data
+SELECT Value FROM TestTable WHERE ISNUMERIC(Value) = 1
+
+	*****************************************************************
+
+SQL Query to find department with highest number of employees
+  select Department.Name, count(Employee.EmployeeID) from Department 
+  inner join Employee on Department.DepartmentPID=Employee.DepartmentPID
+  group by Employee.DepartmentPID,Department.Name
+  *****************************************************************
+  Difference between inner join and left join
+  *****************************************************************
+  Can we join two tables without primary foreign key relation
+  
+  Yes, we can join two tables without primary foreign key relation as long as the column values involved in the join can be converted to one type.
+  
+  *****************************************************************
+  Difference between blocking and deadlocking
+  
+  
+	Blocking : Occurs if a transaction tries to acquire an incompatible lock on a resource that another transaction has already locked. The blocked transaction remains blocked until the blocking transaction releases the lock. 
+
+	Deadlock : Occurs when two or more transactions have a resource locked, and each transaction requests a lock on the resource that another transaction has already locked. Neither of the transactions here can move forward, as each one is waiting for the other to release the lock. So in this case, SQL Server intervenes and ends the deadlock by cancelling one of the transactions, so the other transaction can move forward.
+  *****************************************************************
+  Sql query to select all names that start with a given letter without like operator
+  
+    SELECT * FROM Employee WHERE Name LIKE 'M%'
+	
+	SELECT * FROM Students WHERE CHARINDEX('M',Name) = 1
+	SELECT * FROM Students WHERE LEFT(Name, 1) = 'M'
+	SELECT * FROM Students WHERE SUBSTRING(Name, 1, 1) = 'M'
+  *****************************************************************
+  Sql date interview questions
+  
+  Write a SQL query to get
+
+	1. All people who are born on a given date (For example, 9th October 2017)
+	SELECT Name, DateOfBirth, CAST(DateOfBirth AS DATE) AS [DatePart]
+FROM     Employees
+WHERE  CAST(DateOfBirth AS DATE) = '2017-10-09'
+
+	2. All people who are born between 2 given dates (For example, all people born between Nov 1, 2017 and Dec 31, 2017)
+	SELECT Name, DateOfBirth, CAST(DateOfBirth AS DATE) AS [DatePart]
+FROM     Employees
+WHERE  CAST(DateOfBirth AS DATE) BETWEEN '2017-11-01' AND '2017-12-31'
+
+
+	3. All people who are born on the same day and month excluding the year (For example, 9th October)
+	SELECT Name, DateOfBirth, CAST(DateOfBirth AS DATE) AS [DatePart]
+FROM     Employees
+WHERE  DAY(DateOfBirth) = 9 AND Month(DateOfBirth) = 10
+
+	4. All people who are born yesterday, today, tomorrow, last seven days, and next 7 days
+	
+	--yesterday
+	SELECT Name, DateOfBirth, CAST(DateOfBirth AS DATE) AS [DatePart]
+	FROM    Employees
+	WHERE CAST(DateOfBirth AS DATE) = DATEADD(DAY, -1, CAST(GETDATE() AS DATE))
+
+	--tomorrow
+	SELECT Name, DateOfBirth, CAST(DateOfBirth AS DATE) AS [DatePart]
+	FROM    Employees
+	WHERE  CAST(DateOfBirth AS DATE) = DATEADD(DAY, 1, CAST(GETDATE() AS DATE))
+
+	--yesterday and today\since yesterday 
+	SELECT           Name, DateOfBirth, CAST(DateOfBirth AS DATE) AS [DatePart]
+	FROM              Employees
+	WHERE           CAST(DateOfBirth AS DATE)
+	BETWEEN       DATEADD(DAY, -1, CAST(GETDATE() AS DATE))
+	AND                 CAST(GETDATE() AS DATE)
+
+	--last 7 days (excluding today)
+	SELECT         Name, DateOfBirth, CAST(DateOfBirth AS DATE) AS [DatePart]
+	FROM            Employees
+	WHERE         CAST(DateOfBirth AS DATE)
+	BETWEEN     DATEADD(DAY, -7, CAST(GETDATE() AS DATE))
+	AND               DATEADD(DAY, -1, CAST(GETDATE() AS DATE))
+	
+	--today
+	SELECT        Name, DateOfBirth, CAST(DateOfBirth AS DATE) AS [DatePart]
+	FROM            Employees
+	WHERE         CAST(DateOfBirth AS DATE) = CAST(GETDATE() AS DATE)
+
+	5. All people whose birth year is the same (For example, all people born in 2017, 2018 etc.)
+	
+		SELECT Name, DateOfBirth, CAST(DateOfBirth AS DATE) AS [DatePart]
+FROM    Employees
+WHERE  YEAR(DateOfBirth) = 2017
